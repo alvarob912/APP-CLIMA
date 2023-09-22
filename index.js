@@ -8,7 +8,6 @@ const fetchData = position => {
 }
 
 const setWeatherData = (data) =>{
-    console.log(data);
     const weatherData = {
         location: data.name,
         description: data.weather[0].main,
