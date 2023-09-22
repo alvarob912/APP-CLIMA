@@ -9,17 +9,20 @@ const fetchData = position => {
 
 const setWeatherData = (data) =>{
     const weatherData = {
+        icon: `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`,
         location: data.name,
         description: data.weather[0].main,
         humidity: data.main.humidity,
         pressure: data.main.pressure,
-        temperature: data.main.temp,
+        temperature: data.main.temp +`°`,
         date: getDate(),
     }
 
     Object.keys(weatherData).forEach( key => {
-        document.getElementById(key).textContent = weatherData[key];
+        document.getElementById(key).innerHTML = weatherData[key];
     });
+
+    
 
     cleanUp();
 }
